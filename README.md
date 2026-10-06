@@ -19,13 +19,19 @@ A Power BI investigation into crop yield patterns across 101 countries and 10 cr
 
 ## Screenshots
 
+The project includes the final approved dashboard screenshots in `images/`:
+
+- `01-executive-overview.png`
+- `02-agronomic-input-impact.png`
+- `03-regional-crop-deep-dive.png`
+
 | Executive Overview | Agronomic & Input Impact |
 | --- | --- |
 | ![Executive Overview](images/01-executive-overview.png) | ![Agronomic & Input Impact](images/02-agronomic-input-impact.png) |
 
 ![Regional & Crop Deep-Dive](images/03-regional-crop-deep-dive.png)
 
-*(Screenshots pending — see [`images/README.md`](images/README.md).)*
+See [`images/README.md`](images/README.md) for the approved capture list and display guidance.
 
 ## What This Project Answers
 
@@ -56,18 +62,17 @@ Full findings and interpretation: [`documentation/EXECUTIVE_BRIEFING.pdf`](docum
 
 Star schema — one fact table (`yield_df`, 13,130 rows) and three dimensions (`Dim_Crop`, `Dim_Location`, `Dim_Date`), with 15 DAX measures spanning aggregation, ratio, gap-aware time intelligence, and Pearson correlation. Full detail: [`documentation/DATA_DICTIONARY.md`](documentation/DATA_DICTIONARY.md).
 
+## Public Data Status
+
+The raw underlying files are excluded from this public repository because the exact redistribution licence for the published Kaggle source could not be independently confirmed. The public release therefore keeps the analysis, documentation, screenshots, and derived model artifacts while omitting the raw dataset files and the downloadable `.pbix` containing imported source copies.
+
 ## Repository Structure
 
 ```
 ├── dashboard/
-│   └── README.md            (add your .pbix here)
+│   └── README.md            (public workbook removed; repository retains methodology and screenshots)
 ├── data/
-│   ├── yield_df.csv          ← used by the dashboard
-│   ├── yield.csv              raw source file, reference only
-│   ├── rainfall.csv           raw source file, reference only
-│   ├── temp.csv                raw source file, reference only
-│   ├── pesticides.csv         raw source file, reference only
-│   └── README.md
+│   └── README.md            (states raw source files are excluded from this public repo)
 ├── documentation/
 │   ├── DATA_DICTIONARY.md
 │   ├── SYSTEM_ARCHITECTURE.md
@@ -90,9 +95,11 @@ Star schema — one fact table (`yield_df`, 13,130 rows) and three dimensions (`
 
 ## Running This Locally
 
-1. Open the `.pbix` in [`dashboard/`](dashboard/) in Power BI Desktop.
-2. In Power Query (Transform Data), update the `yield_df` source step to point to your local copy of [`data/yield_df.csv`](data/yield_df.csv) — the packaged source path is specific to the original build machine.
-3. Refresh, then explore the three report pages.
+This public repository intentionally omits the raw dataset and the packaged `.pbix` file. To reproduce the analysis locally, you would need a private copy of the original source data and a local Power BI build that is not published here.
+
+1. Use the project documentation and screenshots in this repository to review the analytical structure.
+2. Keep the raw source data in a private, non-public working copy if you are reproducing the full workbook locally.
+3. Do not assume that the published repository contains a redistributable data copy or a downloadable `.pbix`.
 
 ## Skills Demonstrated
 
@@ -100,7 +107,7 @@ Data modeling (star schema design) · Power Query (M) transformation and data co
 
 ## License
 
-The dashboard, DAX measures, and documentation in this repository are shared for portfolio purposes. The underlying dataset originates from the [Crop Yield Prediction Dataset on Kaggle](https://www.kaggle.com/datasets/patelris/crop-yield-prediction-dataset) — see [`data/README.md`](data/README.md) for its provenance and license status.
+The public project files in this repository are shared for portfolio presentation and methodology review. The underlying source dataset is not redistributed here because its licence could not be independently confirmed, and the Kaggle-originated source is therefore excluded from the public repository.
 
 ## Author
 

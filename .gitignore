@@ -1,5 +1,9 @@
 # Power BI lock files
 ~$*.pbix
+*.pbix
+
+# Source data excluded from public repo
+/data/*.csv
 
 # OS files
 .DS_Store
